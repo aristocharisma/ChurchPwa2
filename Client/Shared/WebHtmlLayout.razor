@@ -1,0 +1,18 @@
+﻿@inherits LayoutComponentBase
+@*<ContentWrapper>*@
+<div>
+    @Body
+</div>
+@*</ContentWrapper>*@
+
+
+@code {
+    protected override void OnAfterRender(bool isFirstRender)
+    {
+        //layoutManager.IsFooterFixed = false;
+        //layoutManager.IsNavBarFixed = false;
+        //layoutManager.IsSideBarFixed = false;
+        base.OnAfterRender(isFirstRender);
+    }
+
+}

@@ -1,0 +1,81 @@
+﻿@layout WebHtmlLayout
+@page "/"
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components
+@using ChurchPwa2.Shared.DwellModels
+@using System.Net.Http.Json;
+@using Blazored.Typeahead
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+
+
+<body class="u-body u-overlap u-overlap-contrast u-overlap-transparent u-xl-mode">
+
+    <section class="homeimage u-align-center u-clearfix u-image u-shading u-section-1-home" src="" data-image-width="1640" data-image-height="924" id="sec-2666">
+        <div>
+            <WebNav />
+        </div>
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <h1 class="u-text u-title u-text-1">Welcome to Dwell</h1>
+            <p class="u-large-text u-text u-text-default u-text-variant u-text-2">Dwell Church is a Christian church based in Pinetown, Durban, KZN, South Africa</p>
+            <p class="u-large-text u-text u-text-default u-text-variant u-text-2">@HomePageNotice</p>
+
+            <div class="u-list u-list-1  " style="padding-bottom:10px;">
+                <div class="u-repeater u-repeater-1">
+                    <div class="u-container-style u-list-item u-repeater-item">
+                        <div class="u-container-layout u-similar-container u-container-layout-1">
+                            <a href="listen" class="u-btn u-btn-round u-button-style u-custom-item u-palette-2-base u-radius-50 u-btn-1">LISTEN</a>
+                        </div>
+                    </div>
+                    <div class="u-container-style u-list-item u-repeater-item">
+                        <div class="u-container-layout u-similar-container u-container-layout-2">
+                            <a href="connect" class="u-btn u-btn-round u-button-style u-custom-item u-palette-2-base u-radius-50 u-btn-2">NEW HERE?</a>
+                        </div>
+                    </div>
+                    <div class="u-container-style u-list-item u-repeater-item">
+                        <div class="u-container-layout u-similar-container u-container-layout-3">
+                            <a href="engage" data-page-id="276368269" class="u-btn u-btn-round u-button-style u-custom-item u-palette-2-base u-radius-50 u-btn-3">ENGAGE</a>
+                        </div>
+                    </div>
+                  
+                </div>
+            </div>
+            <div class="row">
+                <div class="container-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div>
+        <WebFooter />
+    </div>
+</body>
+@*</html>*@
+
+@code {
+
+    string HomePageNotice = "";
+    private async Task<string> GetHomePageNotice()
+    {
+        var configVals = await Http.GetFromJsonAsync<List<ConfigurationValueClass>>($"ConfigurationValues/GetHomePageNotice");
+        
+        if (configVals != null && configVals.First() != null)
+        {
+            var ret = configVals.First().ConfigurationValue;
+            return ret;
+        }
+        else
+            return "";
+    }
+    //ConfigurationValueClassVM configurationValue = new ConfigurationValueClassVM();
+    protected async override Task OnParametersSetAsync()
+    {
+        HomePageNotice = await GetHomePageNotice();
+    }
+
+
+}
+
+

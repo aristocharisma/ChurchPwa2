@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32510.428
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32519.379
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChurchPwa2.Server", "Server\ChurchPwa2.Server.csproj", "{E4BC5186-7239-417B-9B66-A4A3169A0724}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChurchPwa2.Server", "Server\ChurchPwa2.Server.csproj", "{E4BC5186-7239-417B-9B66-A4A3169A0724}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChurchPwa2.Client", "Client\ChurchPwa2.Client.csproj", "{8844462D-EE2E-4FE5-8064-5DFDCABD8E7C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChurchPwa2.Client", "Client\ChurchPwa2.Client.csproj", "{8844462D-EE2E-4FE5-8064-5DFDCABD8E7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChurchPwa2.Shared", "Shared\ChurchPwa2.Shared.csproj", "{33CE109B-1B5E-4161-8189-3F5415331B9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChurchPwa2.Shared", "Shared\ChurchPwa2.Shared.csproj", "{33CE109B-1B5E-4161-8189-3F5415331B9E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
